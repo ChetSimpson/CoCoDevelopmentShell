@@ -1,0 +1,62 @@
+**NOTE** CCSERV.EXE will run under Windows 3.1 and Windows95.  It has not
+been tested on WindowsNT.
+
+
+CCSERV.EXE runs on your PC and allows you to connect to the CoCo thru
+the RS-232 pack at a rate of 19.2k baud.
+
+SERVER.BIN runs on the CoCo III and allows your PC to communicate with it..
+
+---------------------
+SERVER.BIN currently REQUIRES the RS-232 pak to be plugged in and
+connected to the PC or other terminal.  If it is not, it will sit
+there on a blank blue screen until it is.
+
+Once it starts up you will see a command prompt. This prompt is
+specific to SERVER.BIN and allows you to enter commands from either
+the PC or the CoCo keyboard.
+
+Commands currently implemented:
+
+reset   - Resets the server
+dir     - Displays the directory of drive 0 (see notes below)
+load    - Loads a .bin file into memory
+exec    - executes the loaded .bin file
+run     - Loads and executes a .bin file
+cls     - Clears the screen
+
+
+---------------------
+CCSERV.EXE is the utility that allows you to communicate with the CoCo.
+Its primary purpose is to allow easy transfers of files from the PC to
+the CoCo using a list of files contained in a text file.
+
+When CCSERV starts up, you will immediatly be taken to terminal mode.
+Here you can communicate with the CoCo server.
+
+In order to transfer and/or update files on the CoCo, you will need to
+create a file called UPDATE.SCR in the current directory.  This file contains
+information for both the PC and the CoCo and looks something like this:
+
+port 1
+update server.bin
+update kill.bin
+update vipzap.bin
+update term.bin
+
+The only two command supported are 'port' and 'update'.  'Port' tells
+CCSERV.EXE which com port (1,2,3 or 4) to use to communicate with the CoCo.
+'update' tells the PC which files to update when communicating with the CoCo.
+
+
+The update.scr file can be modified any time that CCSERV.EXE is running and
+it will use the new information the next time an update occurs.  This only
+works with the 'update' commands.  If the com port is changed, CCSERV.EXE
+will need to be restarted.
+
+In order to initiate an update transfer to the CoCo press the F1 key.  This
+will read update.scr and update all of the files that are listed.  Note that
+it will ONLY update files that have changed on the PC.
+
+
+

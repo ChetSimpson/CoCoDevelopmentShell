@@ -1,0 +1,16 @@
+
+
+Header file format:
+
+
+
+Offset      Description
+-------------------------------
+$00-$01     Signature
+$02-$03     Module size
+$04-$05     Offset to module name
+$06         Module type
+$07         Revision level
+$08         Header check
+$09,$0a     Execution offset
+
