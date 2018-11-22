@@ -11,7 +11,7 @@
 *
 				org	$dd00
 
-game_daemon     equ     $1      * 0=no, 1=yes
+game_daemon     equ     $0      * 0=no, 1=yes
 
 
 vectors		rmb	128

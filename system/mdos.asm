@@ -1199,7 +1199,7 @@ GETSTAT
 getstat10
 			   cmpa  #gs_drivest
 				bne   getstatn
-				ldb   #STATUS
+				ldb   STATUS
 				bra   getstatr
 
 
